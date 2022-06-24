@@ -1,6 +1,6 @@
 ﻿using BaoProject.Domain;
 
-namespace BaoProject;
+namespace BaoProject.Responses;
 
 public class BaoResponse
 {
