@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IBaoService, BaoService>();
 builder.Services.AddScoped<IBaoQuery, BaoQuery>();
 builder.Services.AddScoped<IBaoByIdQuery, BaoByIdQuery>();
+builder.Services.AddScoped<IBaoSearchQuery, BaoSearchQuery>();
 
 var app = builder.Build();
 

@@ -39,4 +39,27 @@ public class BaoController
             IsVegan = bao.IsVegan
         };
     }
+
+    [HttpGet("Search")]
+    public IEnumerable<BaoResponse> Search([FromQuery] string query)
+    {
+        var baos = _baoService.SearchBao(query);
+        var baoResponses = new List<BaoResponse>();
+
+        foreach (Bao bao in baos)
+        {
+            var baoResponse = new BaoResponse()
+            {
+                Name = bao.Name,
+                Filling = bao.Filling,
+                IsGlutenFree = bao.IsGlutenFree,
+                IsVegan = bao.IsVegan
+            };
+            baoResponses.Add(baoResponse);
+        }
+
+        return baoResponses;
+
+    }
+    
 }

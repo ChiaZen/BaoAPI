@@ -7,11 +7,13 @@ public class BaoService : IBaoService
 {
     private readonly IBaoQuery _baoQuery;
     private readonly IBaoByIdQuery _baoByIdQuery;
+    private readonly IBaoSearchQuery _baoSearchQuery;
     
-    public BaoService(IBaoQuery baoQuery, IBaoByIdQuery baoByIdQuery)
+    public BaoService(IBaoQuery baoQuery, IBaoByIdQuery baoByIdQuery, IBaoSearchQuery baoSearchQuery)
     {
         _baoQuery = baoQuery;
         _baoByIdQuery = baoByIdQuery;
+        _baoSearchQuery = baoSearchQuery;
     }
     
     public IEnumerable<Bao> GetBao()
@@ -22,5 +24,10 @@ public class BaoService : IBaoService
     public Bao GetBaoById(int id)
     {
         return _baoByIdQuery.GetBao(id);
+    }
+
+    public IEnumerable<Bao> SearchBao(string query)
+    {
+        return _baoSearchQuery.SearchBao(query);
     }
 }
