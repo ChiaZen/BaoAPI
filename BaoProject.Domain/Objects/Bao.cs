@@ -1,4 +1,4 @@
-﻿namespace BaoProject.Domain;
+﻿namespace BaoProject.Domain.Objects;
 
 public class Bao
 {

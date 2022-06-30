@@ -1,10 +1,11 @@
 ﻿using BaoProject.Domain;
-using BaoProject.Domain.Interface;
+using BaoProject.Domain.Interfaces;
+using BaoProject.Domain.Objects;
 using Dapper;
 using Microsoft.Data.SqlClient;
 
 
-namespace BaoProject.Infrastructure;
+namespace BaoProject.Infrastructure.Queries;
 
 public class BaoQuery : IBaoQuery
 {

@@ -1,7 +1,7 @@
-﻿using System.IO.Compression;
-using BaoProject.Domain.Interface;
+﻿using BaoProject.Domain.Interfaces;
+using BaoProject.Domain.Objects;
 
-namespace BaoProject.Domain;
+namespace BaoProject.Domain.Services;
 
 public class BaoService : IBaoService
 {

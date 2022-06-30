@@ -1,4 +1,6 @@
-﻿namespace BaoProject.Domain;
+﻿using BaoProject.Domain.Objects;
+
+namespace BaoProject.Domain.Services;
 
 public interface IBaoService
 {

@@ -1,6 +1,7 @@
 using BaoProject.Domain;
-using BaoProject.Domain.Interface;
-using BaoProject.Infrastructure;
+using BaoProject.Domain.Interfaces;
+using BaoProject.Domain.Services;
+using BaoProject.Infrastructure.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
