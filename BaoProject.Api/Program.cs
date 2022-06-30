@@ -1,6 +1,7 @@
 using BaoProject.Domain;
 using BaoProject.Domain.Interfaces;
 using BaoProject.Domain.Services;
+using BaoProject.Infrastructure.Commands;
 using BaoProject.Infrastructure.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,7 @@ builder.Services.AddScoped<IBaoService, BaoService>();
 builder.Services.AddScoped<IBaoQuery, BaoQuery>();
 builder.Services.AddScoped<IBaoByIdQuery, BaoByIdQuery>();
 builder.Services.AddScoped<IBaoSearchQuery, BaoSearchQuery>();
+builder.Services.AddScoped<IBaoCreateCommand, BaoCreateCommand>();
 
 var app = builder.Build();
 

@@ -1,6 +1,8 @@
 ﻿using BaoProject.Domain;
+using BaoProject.Domain.Interfaces;
 using BaoProject.Domain.Objects;
 using BaoProject.Domain.Services;
+using BaoProject.Requests;
 using BaoProject.Responses;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,12 +13,12 @@ namespace BaoProject.Controllers;
 public class BaoController
 {
     private readonly IBaoService _baoService;
-    
+
     public BaoController(IBaoService baoService)
     {
         _baoService = baoService;
     }
-    
+
     [HttpGet]
     public IEnumerable<BaoResponse> GetBao()
     {
@@ -28,7 +30,7 @@ public class BaoController
             Name = x.Name
         });
     }
-    
+
     [HttpGet("{id}")]
     public BaoResponse GetBaoById([FromRoute] int id)
     {
@@ -63,5 +65,18 @@ public class BaoController
         return baoResponses;
 
     }
-    
+
+    [HttpPost]
+    public IActionResult CreateBao([FromBody] BaoRequest bao)
+    {
+        _baoService.CreateBao(new Bao()
+        {
+            Name = bao.Name,
+            Filling = bao.Filling,
+            IsGlutenFree = bao.IsGlutenFree,
+            IsVegan = bao.IsVegan
+        });
+        return new NoContentResult();
+    }
+
 }
